@@ -1,0 +1,11 @@
+
+services:
+  funcionarios:
+    build: .
+    container_name: ec02-funcionarios
+    ports:
+      - "8081:80"
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./script.js:/usr/share/nginx/html/script.js:ro
+    restart: unless-stopped
